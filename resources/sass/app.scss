@@ -1,0 +1,119 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+header{
+    background:#fff;
+    h1{
+        max-width:$max-width;
+        margin:0 auto;
+        padding:40px 10px; 
+    }
+}
+.links{
+    max-width:$max-width;
+    margin:20px auto;
+    padding:10px;
+    text-align: right;
+    a{
+        display: inline-block;
+        border:2px solid $newblue;
+        color:#fff;
+        background: $newblue;
+        padding:6px 25px;
+        text-decoration:none;
+        &:first-child{
+            border-radius:$border-r 0 0 $border-r;
+        }
+        &:last-child{
+            border-radius:0 $border-r $border-r 0;
+        }
+        &.active{
+            color:$newblue;
+            background:transparent;
+        }
+    }
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    max-width:$max-width;
+    margin:0 auto;
+    padding:10px;
+    padding-bottom:80px;
+    li{
+        max-width: 300px;
+        width: calc(25% - 20px);
+        margin: 10px;
+        border: 1px solid $border;
+        box-shadow: 0px 0px 3px $border;
+        transition:0.5s all;
+        border-radius: $border-r;
+        overflow: hidden;
+        background:#fff;
+        cursor: pointer;
+        &.imgopen{
+            border-color: $newblue;
+            box-shadow: 0px 0px 10px $newblue;
+            background:$newblue;
+            color:#fff;
+        }
+        .image{
+            padding-top: 70%;
+            background-size: cover;
+            background-position: center;
+        }
+        h3{
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1em;
+        }
+        @media screen and (max-width: $break-tab) {
+            width: calc(33% - 20px);
+        }
+        @media screen and (max-width: $break-phone) {
+            width: calc(50% - 20px);
+        }
+    }
+}
+#options{
+    opacity:0;
+    visibility: hidden;
+    transition: 0.5s all;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    section{
+        max-width:$max-width;
+        background:$newblue;
+        margin:0 auto;
+        border-radius:$border-r $border-r 0 0;
+        box-shadow: 0px 0px 3px $border;
+        text-align:center;
+        a{
+            color:#fff;
+            cursor:pointer;
+            display:inline-block;
+            padding:20px;
+            svg{
+                max-width:30px;
+                @media screen and (max-width: $break-tab) {
+                    max-width:40px;
+                }
+            }
+        }
+    }
+    &.open{
+        opacity:1;
+        visibility: visible;
+    }
+}
